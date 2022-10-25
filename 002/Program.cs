@@ -81,6 +81,47 @@ int IndexArray(int[] array, int num = 5)
     return -1;
 }
 
+int OtritArray(int[] array)
+{
+    int n = 0;
+    for(int i = 0; i < array.Length; i++)
+        if(array[i] < 0) n++;
+    return n;
+}
+
+int ElemArray(int[] array, int num = 5)
+{
+    int n = 0;
+    for(int i = 0; i < array.Length; i++)
+        if(array[i]==num) n++;
+    return n;
+}
+
+int ChetArray(int[] array)
+{
+    int n = 0;
+    for(int i = 0; i < array.Length; i++)
+        if(array[i] % 2 == 0) n++;
+    return n;
+}
+
+int PolozArray(int[] array)
+{
+    int n = 0;
+    for(int i = 0; i < array.Length; i++)
+        if(array[i] >= 0) n++;
+    return n;
+}
+
+int NechetArray(int[] array)
+{
+    int n = 0;
+    for(int i = 0; i < array.Length; i++)
+        if(array[i] % 2 != 0) n++;
+    return n;
+}
+
+
 Console.Write("Введите размер массива: ");
 int length = int.Parse(Console.ReadLine() ?? "0");
 Console.Write("Введите начальный элемент массива: ");
@@ -97,5 +138,8 @@ Console.WriteLine($"Максимальное значение в массиве:
 Console.WriteLine($"Произведения элементов массива: {CompArray(array)}");
 Console.WriteLine($"Наличие элемента (число 5) в массиве: {TrueArray(array)}");
 Console.WriteLine($"Поиск индекса (число 5) в массиве: {IndexArray(array)}");
-
-
+Console.WriteLine($"Подсчёт количества отрицательных элементов массива: {OtritArray(array)}");
+Console.WriteLine($"Подсчёт количества вхождений элемента в массив: {ElemArray(array)}");
+Console.WriteLine($"Подсчёт количества чётных элементов в массив: {ChetArray(array)}");
+Console.WriteLine($"Подсчёт количества положительных элементов в массиве: {PolozArray(array)}");
+Console.WriteLine($"Подсчёт количества нечётных элементов в массиве: {NechetArray(array)}");
