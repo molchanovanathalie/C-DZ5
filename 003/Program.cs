@@ -54,6 +54,24 @@ bool ChetNum(int N)
     return false;
 }
 
+bool Palindrom(int N)
+{
+    string str = N.ToString();
+    char [] ar = str.ToCharArray();
+    int j = 0;
+    int a = ar.Length/2;
+    
+for(int i=0; i<a; i++)
+{
+    int n = ar[i];
+    int m =ar[ar.Length-1-i];
+	if (m==n)j++;
+}
+if (j==a)
+return true;
+else
+return false;
+}
 
 
 
@@ -69,3 +87,4 @@ Console.WriteLine($"Cумма цифр произвольного целого �
 Console.WriteLine($"Cумма двух целых чисел: {Sum2Num(A,N)}");
 Console.WriteLine($"Является ли число простым: {ProstNum(N)}");
 Console.WriteLine($"Является ли число четным: {ChetNum(N)}");
+Console.WriteLine($"Является ли число палиндромом: {Palindrom(N)}");
